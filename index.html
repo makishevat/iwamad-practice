@@ -1,117 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomiris Makisheva - Personal Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body>
+  <header>
+    <h1>Student Card</h1>
+  </header>
 
-    <header>
-        <h1>Tomiris Makisheva</h1>
-        <p>Aspiring Project Manager & IT Specialist</p>
-    </header>
+  <main>
+    <div class="gallery">
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#goals">Goals</a>
-        <a href="#contact">Contact</a>
-    </nav>
+      <section class="card p-6 rounded-xl shadow-md">
+        <img src="Photo Tomiris.jpg" alt="Tomiris Makisheva" class="avatar">
+        <div class="card-text">
+          <h2>About me</h2>
+          <p>Name: Makisheva Tomiris<br>
+          Education: Third-year IT Management Student at KBTU. <br>
+          GPA: 3.52</p>
+          <div class="links">
+            <a href="mailto:you@example.com">Email</a>
+            <a href="https://github.com/yourusername">GitHub</a>
+          </div>
+        </div>
+      </section>
 
-    <main>
+      <section class="card p-6 rounded-xl shadow-md">
+        <div class="card-icon">💻</div>
+        <div class="card-text">
+          <h2>Skills</h2>
+          <p>HTML, CSS, JavaScript, Python, SQL, Excel, Figma, C++, Power BI. Experience as an informatics mentor and English curator, with hands-on tutoring background.</p>
+        </div>
+      </section>
 
-        <section id="about">
-            <h2>About Me</h2>
+      <section class="card p-6 rounded-xl shadow-md">
+        <div class="card-icon">🎯</div>
+        <div class="card-text">
+          <h2>Goals</h2>
+          <p>Growing as a project manager/data analyst while finishing my IT Management degree at KBTU. Aiming to get internship for more experience! </p>
+        </div>
+      </section>
 
-            <img src="Photo Tomiris.jpg" alt="Tomiris Makisheva profile photo" width="200">
+      <section class="card p-6 rounded-xl shadow-md">
+        <div class="card-icon">🚀</div>
+        <div class="card-text">
+          <h2>Projects</h2>
+          <p>AWS Cloud Project<br>
+          ARTIQUE Marketplace UI Design<br>
+          Data Analytics Projects with Python</p>
+        </div>
+      </section>
 
-            <p>
-                Hello! My name is Tomiris. I am an IT Management student
-                interested in technology, project management and web development.
-                I am taking this course to improve my technical skills and learn
-                how to build useful and user-friendly web applications.
-            </p>
-        </section>
+    </div>
 
+    <button class="like-btn">Like</button>
+  </main>
 
-        <section id="skills">
-            <h2>Skills</h2>
+  <footer>
+    <p>&copy; 2026</p>
+  </footer>
 
-            <ul>
-                <li>Power BI</li>
-                <li>Python</li>
-                <li>SQL</li>
-                <li>Git and GitHub</li>
-                <li>Project Management</li>
-            </ul>
-        </section>
-
-
-        <section id="goals">
-            <h2>My Goals</h2>
-
-            <table border="1">
-                <tr>
-                    <th>Skill</th>
-                    <th>Current Level</th>
-                    <th>Goal</th>
-                </tr>
-                <tr>
-                    <td>HTML</td>
-                    <td>Beginner</td>
-                    <td>Advanced</td>
-                </tr>
-                <tr>
-                    <td>CSS</td>
-                    <td>Beginner</td>
-                    <td>Advanced</td>
-                </tr>
-                <tr>
-                    <td>JavaScript</td>
-                    <td>Beginner</td>
-                    <td>Advanced</td>
-                </tr>
-            </table>
-        </section>
-
-
-        <section id="contact">
-            <h2>Contact Me</h2>
-
-            <p>
-                Email:
-                <a href="mailto:tomirimakiseva@gmail.com">
-                    tomirismakiseva@gmail.com
-                </a>
-            </p>
-
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-
-                <br><br>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-
-                <br><br>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message"></textarea>
-
-                <br><br>
-
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Tomiris Makisheva</p>
-    </footer>
-
+  <script>
+    const btn = document.querySelector('.like-btn');
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('liked');
+      btn.textContent = btn.classList.contains('liked') ? 'Liked' : 'Like';
+    });
+  </script>
 </body>
 </html>
