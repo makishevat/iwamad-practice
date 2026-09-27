@@ -1,0 +1,136 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #fafafa;
+  color: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e5e5;
+  color: #767676;
+  font-size: 14px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 32px 16px;
+}
+
+.card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 28px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  max-width: 500px;
+  background-color: #ffffff;
+  text-align: left;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text h2 {
+  margin: 0 0 8px 0;
+  font-size: 17px;
+  color: #1a1a1a;
+}
+
+.card-text p {
+  margin: 0;
+  color: #4a4a4a;
+  line-height: 1.5;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card a {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+
+.card a:hover {
+  color: #767676;
+}
+
+.like-btn {
+  width: 200px;
+  padding: 12px;
+  margin: 40px auto 0;
+  display: block;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.like-btn:hover {
+  background-color: #333333;
+}
+
+.like-btn.liked {
+  background-color: #dc2626;
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .like-btn, .card {
+    width: 90%;
+    max-width: 320px;
+  }
+}
