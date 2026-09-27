@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 type ProfileCardProps = {
   name: string;
   education: string;
@@ -15,6 +17,12 @@ export function ProfileCard({
   email,
   githubUrl,
 }: ProfileCardProps) {
+  const [likes, setLikes] = useState(0);
+
+  function handleClick() {
+    setLikes(likes + 1);
+  }
+
   return (
     <section className="card">
       <img src={avatarUrl} alt={name} className="avatar" />
@@ -31,6 +39,9 @@ export function ProfileCard({
           <a href={`mailto:${email}`}>Email</a>
           <a href={githubUrl}>GitHub</a>
         </div>
+        <button className="like-btn" onClick={handleClick}>
+          Like ({likes})
+        </button>
       </div>
     </section>
   );
