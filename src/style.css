@@ -148,3 +148,19 @@ main {
     max-width: 320px;
   }
 }
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid currentColor;
+}
