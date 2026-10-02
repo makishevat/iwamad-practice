@@ -5,17 +5,13 @@ type ProfileCardProps = {
   education: string;
   gpa: string;
   avatarUrl: string;
-  email: string;
-  githubUrl: string;
 };
 
 export function ProfileCard({
   name,
   education,
   gpa,
-  avatarUrl,
-  email,
-  githubUrl,
+  avatarUrl
 }: ProfileCardProps) {
   return (
     <section className="card">
@@ -29,10 +25,6 @@ export function ProfileCard({
           <br />
           GPA: {gpa}
         </p>
-        <div className="links">
-          <a href={`mailto:${email}`}>Email</a>
-          <a href={githubUrl}>GitHub</a>
-        </div>
         <LikeButton />
       </div>
     </section>
