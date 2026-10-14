@@ -15,10 +15,20 @@ body {
 }
 
 header {
-  text-align: center;
-  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-6);
   background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (min-width: 640px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 header h1 {
@@ -31,7 +41,7 @@ footer {
   padding: 24px;
   background-color: #ffffff;
   border-top: 1px solid #e5e5e5;
-  color: #767676;
+  color: var(--color-text-muted);
   font-size: 14px;
 }
 
@@ -42,18 +52,6 @@ main {
   justify-content: center;
   flex: 1;
   padding: 32px 16px;
-}
-
-.card {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  padding: 28px;
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
-  max-width: 500px;
-  background-color: #ffffff;
-  text-align: left;
 }
 
 .avatar {
@@ -102,24 +100,13 @@ main {
 }
 
 .like-btn {
-  width: 200px;
-  padding: 12px;
-  margin: 40px auto 0;
-  display: block;
-  background-color: #1a1a1a;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.like-btn:hover {
-  background-color: #333333;
+  align-self: flex-start;
+  margin-top: 12px;
 }
 
 .like-btn.liked {
   background-color: #dc2626;
+  border-color: #dc2626;
 }
 
 .skills-list {
@@ -129,22 +116,35 @@ main {
 }
 
 .skill-item {
-  background-color: #f0f0f0;
-  padding: 4px 12px;
-  border-radius: 4px;
-  font-size: 14px;
   margin-bottom: 8px;
 }
 
 @media (max-width: 480px) {
-  .card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .like-btn {
+    align-self: center;
   }
+}
 
-  .like-btn, .card {
-    width: 90%;
-    max-width: 320px;
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+@media (min-width: 640px) {
+  nav {
+    flex-direction: row;
+    gap: var(--space-6);
   }
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid currentColor;
 }
