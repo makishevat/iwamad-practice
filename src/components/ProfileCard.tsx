@@ -1,28 +1,18 @@
-import { useState } from "react";
+import { LikeButton } from "./LikeButton";
 
 type ProfileCardProps = {
   name: string;
   education: string;
   gpa: string;
   avatarUrl: string;
-  email: string;
-  githubUrl: string;
 };
 
 export function ProfileCard({
   name,
   education,
   gpa,
-  avatarUrl,
-  email,
-  githubUrl,
+  avatarUrl
 }: ProfileCardProps) {
-  const [likes, setLikes] = useState(0);
-
-  function handleClick() {
-    setLikes(likes + 1);
-  }
-
   return (
     <section className="card">
       <img src={avatarUrl} alt={name} className="avatar" />
@@ -35,13 +25,7 @@ export function ProfileCard({
           <br />
           GPA: {gpa}
         </p>
-        <div className="links">
-          <a href={`mailto:${email}`}>Email</a>
-          <a href={githubUrl}>GitHub</a>
-        </div>
-        <button className="like-btn" onClick={handleClick}>
-          Like ({likes})
-        </button>
+        <LikeButton />
       </div>
     </section>
   );
