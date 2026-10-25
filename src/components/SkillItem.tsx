@@ -1,3 +1,5 @@
+import { Tag } from "./ui/Tag";
+
 type Skill = {
   id: number;
   label: string;
@@ -8,5 +10,9 @@ type SkillItemProps = {
 };
 
 export function SkillItem({ skill }: SkillItemProps) {
-  return <li className="skill-item">{skill.label}</li>;
+  return (
+    <li className="skill-item">
+      <Tag label={skill.label} />
+    </li>
+  );
 }
